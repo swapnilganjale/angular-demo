@@ -1,0 +1,36 @@
+<h1>Task1</h1>
+<hr>
+<div class="col-md-12">
+    <a class="btn btn-primary" routerLink="addtask" >Add Task</a>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <table class="table">
+    <thead>
+     <tr>
+       <th>ID</th>
+       <th>Task name</th>
+       <th>Task createdAt</th>
+       <th>Task status</th>
+       <th>Task percentage</th>
+       <th>Task finishAt</th>
+
+     </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let task of tasks">
+       <td>{{ task.id }}</td>
+       <td>{{ task.name }}</td>
+       <td>{{ task.createdAt }}</td>
+       <td>{{ task.status }}</td>
+       <td>{{ task.percentage }}</td>
+       <td>{{ task.finishAt }}</td>
+     </tr>
+    </tbody>
+    </table>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

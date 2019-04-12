@@ -1,0 +1,17 @@
+<div class="container">
+
+<h1>Add Task</h1>
+<form  (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+  <div class="form-group ">
+    <label for="name">Task name</label>
+    <input type="text" class="form-control col-8" id="name" required [(ngModel)]="task1.name" name="name" #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Task Name is required
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Save</button>
+
+</form>
+</div>

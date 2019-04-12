@@ -1,0 +1,41 @@
+<h1>Users</h1>
+<hr>
+<div class="col-md-12">
+    <a class="btn btn-primary" routerLink="addUser" >Add User</a>
+
+</div>
+<hr>
+<div class="row">
+
+  <div class="col">
+
+    <table class="table">
+    <thead>
+     <tr>
+       <th>ID</th>
+       <th>Full Name</th>
+       <th>Email name</th>
+       <th>Mobile</th>
+       <th>Birthdate</th>
+       <th>Action</th>
+
+     </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let user of users">
+       <td>{{ user.id }}</td>
+       <td>{{ user.fullName }}</td>
+       <td>{{ user.email }}</td>
+       <td>{{ user.mobile }}</td>
+       <td>{{ user.dob }}</td>
+
+       <td><a routerLink="getUser/{{user.id}}">edit</a> |<a [routerLink]="" (click)="onDelete(user)">delete</a> </td>
+
+     </tr>
+    </tbody>
+    </table>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
